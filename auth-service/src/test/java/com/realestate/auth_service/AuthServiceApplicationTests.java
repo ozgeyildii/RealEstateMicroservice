@@ -1,4 +1,4 @@
-package com.realEestate.auth_service;
+package com.realestate.auth_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
