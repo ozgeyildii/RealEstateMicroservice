@@ -1,5 +1,11 @@
+# 1. Base image
 FROM eclipse-temurin:17-jdk-alpine
-VOLUME /tmp
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+
+# 2. Çalışma dizini
+WORKDIR /app
+
+# 3. Jar dosyasını kopyala
+COPY target/eureka-server-0.0.1-SNAPSHOT.jar app.jar
+
+# 4. Jar çalıştır
+ENTRYPOINT ["java","-jar","/app/app.jar"]

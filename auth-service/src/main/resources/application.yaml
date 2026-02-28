@@ -1,3 +1,30 @@
+server:
+  port: 8081
+
 spring:
   application:
     name: auth-service
+
+  datasource:
+    url: jdbc:postgresql://localhost:5433/auth_db
+    username: auth_database
+    password: 12345
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+logging:
+  level:
+    org.hibernate.SQL: debug
